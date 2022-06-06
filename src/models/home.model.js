@@ -1,17 +1,13 @@
-const mongoose=require("mongoose")
-const homeSchema=new mongoose.Schema(
-{
-    img_url: { type: String, required: true },
-    title: { type: String, required: true},
-    price: { type: Number, required: true },
-   
-   
-},
-{
-    timestamps:true,
-    versionKey:false,
-}
+const mongoose = require("mongoose")
 
-)
-module.exports=mongoose.model("home",homeSchema)
-
+const UserSchema = new mongoose.Schema({
+    "id": {type:Number,required:false},
+    "desc": {type:String,required:false},
+    "price": {type:String,required:false},
+    "img": {type:String,required:false},
+    "rating": {type:String,required:false},
+    "category": {type:String,required:false},
+    "rating_img": {type:String,required:false},
+})
+const users = mongoose.model("user",UserSchema)
+module.exports = users;
